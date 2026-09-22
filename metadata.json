@@ -1,0 +1,6 @@
+{
+  "name": "Kevin Chris Digital",
+  "description": "Transformer votre temps en cash. Site officiel de Kevin Chris Atchof : Formateur digital, social media manager, auteur et accompagnateur de créateurs et marques.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

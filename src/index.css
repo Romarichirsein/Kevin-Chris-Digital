@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+@keyframes spin-beam {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blue-pulse-halo {
+  0%, 100% {
+    box-shadow: 0 0 15px -3px rgba(37, 99, 235, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.4);
+    border-color: rgba(59, 130, 246, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 30px 2px rgba(59, 130, 246, 0.55), 0 0 0 1.5px rgba(96, 165, 250, 0.9);
+    border-color: rgba(96, 165, 250, 0.9);
+  }
+}
+
+/* Pulsation douce / Lueur bleue autour des boutons d'action (CTA) principaux */
+@keyframes cta-blue-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.45), 0 4px 14px 0 rgba(37, 99, 235, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(59, 130, 246, 0.2), 0 0 24px 4px rgba(37, 99, 235, 0.6), 0 8px 24px 0 rgba(37, 99, 235, 0.45);
+  }
+}
+
+.cta-pulse-glow {
+  animation: cta-blue-pulse 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  transition: all 0.25s ease-out;
+}
+
+.cta-pulse-glow:hover {
+  animation-play-state: paused;
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 10px rgba(59, 130, 246, 0.25), 0 0 32px 6px rgba(37, 99, 235, 0.75);
+}
+
+@keyframes blue-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Revolving blue beam perimeter around cards and sections */
+.blue-perimeter-beam {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+.blue-perimeter-beam::before {
+  content: '';
+  position: absolute;
+  inset: -150%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 280deg,
+    rgba(56, 189, 248, 0.4) 320deg,
+    rgba(37, 99, 235, 1) 350deg,
+    rgba(96, 165, 250, 1) 360deg
+  );
+  animation: spin-beam 5s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.blue-perimeter-inner {
+  position: relative;
+  z-index: 1;
+  border-radius: calc(1.5rem - 1.5px);
+  margin: 1.5px;
+}
+
+.blue-halo {
+  box-shadow: 0 0 20px 2px rgba(59, 130, 246, 0.4), 0 0 0 1px rgba(96, 165, 250, 0.6);
+  animation: blue-pulse-halo 3s ease-in-out infinite;
+}
+
+.hover-blue-halo {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-blue-halo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 28px 4px rgba(59, 130, 246, 0.5), 0 12px 28px -6px rgba(37, 99, 235, 0.4), 0 0 0 1.5px rgba(96, 165, 250, 0.9);
+  border-color: rgba(96, 165, 250, 0.8) !important;
+}
+
+.hover-glow-blue {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-glow-blue:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px -10px rgba(37, 99, 235, 0.35), 0 0 0 1px rgba(96, 165, 250, 0.5);
+}

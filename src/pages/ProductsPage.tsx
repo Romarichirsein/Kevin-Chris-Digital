@@ -12,7 +12,6 @@ import {
   MessageSquare, 
   BookOpen,
   Sparkles,
-  Zap,
   Laptop
 } from 'lucide-react';
 
@@ -148,7 +147,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({ currency, language }
 
                 <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
                   <div className="text-xs font-bold text-slate-900 dark:text-white mb-1 flex items-center gap-1.5">
-                    <Zap className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
+                    <CheckCircle className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
                     <span>{t.products.promiseLabel}</span>
                   </div>
                   <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">

@@ -19,8 +19,7 @@ import {
   User, 
   Briefcase, 
   Calendar, 
-  Cpu,
-  Zap,
+  Rocket,
   ShieldCheck,
   ExternalLink
 } from 'lucide-react';
@@ -373,7 +372,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, language, curren
           {/* Card 1 */}
           <motion.div variants={itemFadeInUp} className="p-7 rounded-3xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 hover:border-blue-500/60 shadow-sm hover-blue-halo group transition-all">
             <div className="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800/60 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-              <Zap className="w-6 h-6" />
+              <TrendingUp className="w-6 h-6" />
             </div>
             <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
               Algorithme & Hook dès les premières secondes
@@ -386,7 +385,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, language, curren
           {/* Card 2 - Center Card with Blue Halo */}
           <motion.div variants={itemFadeInUp} className="relative p-7 rounded-3xl bg-gradient-to-b from-blue-50/50 via-white to-white dark:from-blue-950/40 dark:via-slate-900/90 dark:to-slate-900/90 border border-blue-400/50 dark:border-blue-500/50 shadow-md blue-halo hover-blue-halo group transition-all">
             <div className="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center mb-5 group-hover:scale-110 transition-transform shadow-md shadow-blue-500/30">
-              <Cpu className="w-6 h-6" />
+              <Rocket className="w-6 h-6" />
             </div>
             <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
               L'IA comme accélérateur de productivité

@@ -6,8 +6,7 @@ import {
   HelpCircle, 
   ChevronDown, 
   MessageSquare, 
-  Sparkles,
-  Zap
+  Sparkles
 } from 'lucide-react';
 
 interface FaqSectionProps {

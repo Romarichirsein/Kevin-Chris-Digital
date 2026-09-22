@@ -1,8 +1,8 @@
 import React from 'react';
 import { 
-  Zap, 
+  Target, 
   Smartphone, 
-  Cpu, 
+  Sparkles, 
   Workflow, 
   ShieldCheck, 
   Coins, 
@@ -24,7 +24,7 @@ export const ValueProposition: React.FC = () => {
       num: '01',
       title: 'L’IA adaptée au terrain africain',
       desc: 'Pas de théories complexes. Des prompts testés sur ChatGPT, Claude et Gemini pour rédiger des scripts TikTok viraux, des offres et des pages de vente en 10 minutes chrono.',
-      icon: Cpu,
+      icon: Target,
       tag: 'Pragmatisme 100%'
     },
     {

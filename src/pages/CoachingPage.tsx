@@ -12,7 +12,6 @@ import {
   MessageSquare, 
   CheckCircle2, 
   ExternalLink,
-  Zap,
   Sparkles,
   Award
 } from 'lucide-react';
@@ -184,7 +183,7 @@ export const CoachingPage: React.FC<CoachingPageProps> = ({ currency, language }
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 flex items-center gap-1.5">
-                    <Zap className="w-3.5 h-3.5" />
+                    <Award className="w-3.5 h-3.5" />
                     <span>Formule Intensive</span>
                   </span>
                   <div className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">

@@ -16,8 +16,7 @@ import {
   Briefcase, 
   Calendar, 
   PhoneCall, 
-  Mail,
-  Zap
+  Mail
 } from 'lucide-react';
 
 interface NavbarProps {

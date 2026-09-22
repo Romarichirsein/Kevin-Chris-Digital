@@ -8,8 +8,7 @@ import {
   BookOpen, 
   ArrowUpRight, 
   CheckCircle2, 
-  Smartphone,
-  Zap
+  Smartphone
 } from 'lucide-react';
 
 interface HeroProps {

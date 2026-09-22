@@ -17,9 +17,9 @@ export const SEO_PAGES: Record<Language, Record<PageId, SeoMetadata>> = {
     home: {
       title: "Kevin Chris Digital | Monétisation & IA en Afrique",
       description: "Plateforme officielle de Kevin Chris Atchof. Formations concrètes, masterclass FaceHOOK et méthodes éprouvées pour monétiser vos compétences et transformer votre temps en cash.",
-      ogTitle: "Kevin Chris Digital | Transformer votre temps en cash",
-      ogDescription: "Découvrez les formations, masterclasses et audits d'audience de Kevin Chris Atchof. Plus de 492K abonnés et 6 ans d'expertise au service de vos revenus.",
-      ogImage: "/img/kevin_ai_hologram.avif",
+      ogTitle: "Kevin Chris Digital | Expert IA & Stratégie Digitale",
+      ogDescription: "Monétisez vos réseaux sociaux, développez votre visibilité et maîtrisez l'Intelligence Artificielle avec Kevin Chris.",
+      ogImage: "/og-image.jpg",
       keywords: "monétisation facebook afrique, kevin chris digital, kevin chris atchof, facehook masterclass, chariow, mobile money, orange money, mtn momo",
       canonicalPath: "/",
       structuredData: {
@@ -138,9 +138,9 @@ export const SEO_PAGES: Record<Language, Record<PageId, SeoMetadata>> = {
     home: {
       title: "Kevin Chris Digital | Monetization & AI in Africa",
       description: "Official platform of Kevin Chris Atchof. Proven courses, FaceHOOK masterclass, and practical strategies to monetize your skills and turn your time into cash.",
-      ogTitle: "Kevin Chris Digital | Turn Your Time into Cash",
-      ogDescription: "Explore digital courses, masterclasses, and audience audits by Kevin Chris Atchof. 492K+ community members and 6 years of digital expertise.",
-      ogImage: "/img/kevin_ai_hologram.avif",
+      ogTitle: "Kevin Chris Digital | AI & Digital Growth Expert",
+      ogDescription: "Monetize your social media, expand your visibility, and master Artificial Intelligence with Kevin Chris.",
+      ogImage: "/og-image.jpg",
       keywords: "facebook monetization africa, kevin chris digital, kevin chris atchof, facehook masterclass, chariow, mobile money",
       canonicalPath: "/",
       structuredData: {

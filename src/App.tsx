@@ -20,8 +20,11 @@ import { AboutPage } from './pages/AboutPage';
 import { CorporatePage } from './pages/CorporatePage';
 import { CoachingPage } from './pages/CoachingPage';
 import { ContactPage } from './pages/ContactPage';
+import { LoadingScreen } from './components/LoadingScreen';
 
 export default function App() {
+  // 5-second Splash / Circular Loader State
+  const [isLoading, setIsLoading] = useState(true);
   // Page Routing State
   const [currentPage, setCurrentPage] = useState<PageId>(() => {
     const hash = window.location.hash.replace('#/', '').replace('#', '');
@@ -92,28 +95,39 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0c111d] text-slate-900 dark:text-slate-100 flex flex-col font-sans transition-colors duration-200 selection:bg-blue-600 selection:text-white">
-      
-      {/* Top Multi-page Header & Navigation (Devise removed, follower count removed from header, new blue logo) */}
-      <Navbar
-        currentPage={currentPage}
-        onNavigate={handleNavigate}
-        language={language}
-        onLanguageChange={setLanguage}
-        theme={theme}
-        onToggleTheme={handleToggleTheme}
-      />
+    <>
+      {/* 5-Second Circular Loading Screen with Central AI Portrait */}
+      <AnimatePresence>
+        {isLoading && (
+          <LoadingScreen 
+            onFinish={() => setIsLoading(false)} 
+            durationMs={5000} 
+          />
+        )}
+      </AnimatePresence>
 
-      {/* Discrete Page View with Motion Smooth Animation */}
-      <main className="flex-grow">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentPage}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          >
+      <div className="min-h-screen bg-white dark:bg-[#0c111d] text-slate-900 dark:text-slate-100 flex flex-col font-sans transition-colors duration-200 selection:bg-blue-600 selection:text-white">
+        
+        {/* Top Multi-page Header & Navigation (Devise removed, follower count removed from header, new blue logo) */}
+        <Navbar
+          currentPage={currentPage}
+          onNavigate={handleNavigate}
+          language={language}
+          onLanguageChange={setLanguage}
+          theme={theme}
+          onToggleTheme={handleToggleTheme}
+        />
+
+        {/* Discrete Page View with Motion Smooth Animation */}
+        <main className="flex-grow">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentPage}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.35, ease: "easeOut" as const }}
+            >
             {currentPage === 'home' && (
               <HomePage
                 onNavigate={handleNavigate}
@@ -184,6 +198,7 @@ export default function App() {
         onClose={() => setIsAuditOpen(false)}
       />
 
-    </div>
+      </div>
+    </>
   );
 }

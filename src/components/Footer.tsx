@@ -104,8 +104,18 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 text-white flex items-center justify-center font-black text-sm shadow-md shadow-blue-600/30">
-                KC
+              <div className="relative w-11 h-11 rounded-full p-[2px] bg-gradient-to-tr from-cyan-400 via-blue-600 to-indigo-500 shadow-md shadow-blue-950/40 flex items-center justify-center">
+                <img 
+                  src="/img/logo_kevin.jpg" 
+                  alt="Kevin Chris" 
+                  className="w-full h-full object-cover object-top rounded-full"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    if (!target.src.includes('kevin_ai_portrait.jpg')) {
+                      target.src = '/img/kevin_ai_portrait.jpg';
+                    }
+                  }}
+                />
               </div>
               <div>
                 <span className="font-extrabold text-lg text-slate-900 dark:text-white tracking-tight font-['Outfit',sans-serif] block">

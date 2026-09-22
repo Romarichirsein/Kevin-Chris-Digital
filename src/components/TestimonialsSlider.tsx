@@ -49,10 +49,6 @@ export const TestimonialsSlider: React.FC<TestimonialsSliderProps> = ({ onExplor
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
         <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 text-xs font-semibold mb-3 border border-blue-200 dark:border-blue-900/60">
-            <Award className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-            <span>Résultats Concrets & Réussites Terrain</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-['Outfit',sans-serif] tracking-tight">
             Ce que nos étudiants et apprenants ont réalisé
           </h2>

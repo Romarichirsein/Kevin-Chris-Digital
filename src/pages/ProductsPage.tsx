@@ -91,10 +91,6 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({ currency, language }
         animate="visible"
         className="max-w-3xl"
       >
-        <motion.div variants={itemFadeInUp} className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 text-xs font-semibold mb-3 border border-blue-200 dark:border-blue-900/60 shadow-sm">
-          <BookOpen className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-          <span>Boutique Officielle Chariow</span>
-        </motion.div>
         <motion.h1 variants={itemFadeInUp} className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white font-['Outfit',sans-serif]">
           {t.products.pageTitle}
         </motion.h1>
@@ -250,10 +246,6 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({ currency, language }
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent lg:hidden"></div>
             </div>
             <div className="lg:col-span-7 p-7 sm:p-10 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-600/20 text-blue-400 border border-blue-500/30 text-xs font-bold uppercase tracking-wider">
-                <Laptop className="w-3.5 h-3.5" />
-                <span>Pratique 100% Concrète & Actionnable</span>
-              </div>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-['Outfit',sans-serif]">
                 Des méthodes testées en conditions réelles
               </h3>

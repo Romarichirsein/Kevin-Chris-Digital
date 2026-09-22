@@ -36,14 +36,6 @@ export const Hero: React.FC<HeroProps> = ({ onDiscoverGuide, onExplorePortfolio 
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-4xl mx-auto text-center">
-          
-          {/* Eyebrow badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold mb-6 animate-pulse">
-            <span className="flex h-2 w-2 rounded-full bg-emerald-400"></span>
-            <span>Kevin Chris Atchof • Infopreneur & Senior UI/UX Designer</span>
-          </div>
-
-          {/* Main H1 - EXACT REQUEST */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] mb-6 font-['Outfit',sans-serif]">
             L’Intelligence Artificielle et le Design au service de votre{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">

@@ -27,10 +27,7 @@ export const AboutSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-3">
-            <span>Qui est Kevin Chris Atchof ?</span>
-          </div>
+        <div className="max-w-3xl mb-12">
           <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight font-['Outfit',sans-serif]">
             L'alliance de l'expertise technique et de l'entrepreneuriat digital.
           </h2>

@@ -49,10 +49,6 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onAskWhatsApp }) => {
       
       {/* Section Header */}
       <div className="text-center space-y-3 mb-10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 text-xs font-semibold border border-blue-200 dark:border-blue-900/60">
-          <HelpCircle className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-          <span>Foire Aux Questions</span>
-        </div>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-['Outfit',sans-serif] tracking-tight">
           Questions Fréquentes sur la Monétisation & le Coaching
         </h2>

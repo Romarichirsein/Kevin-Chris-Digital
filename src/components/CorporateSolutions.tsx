@@ -36,10 +36,6 @@ export const CorporateSolutions: React.FC<CorporateSolutionsProps> = ({ onOpenAu
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-3">
-            <Building2 className="w-3.5 h-3.5" />
-            <span>Section Solutions Entreprises (Portfolio UI/UX & Conseil)</span>
-          </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight font-['Outfit',sans-serif]">
             Besoin d'un design d'interface ou d'une stratégie de croissance ?
           </h2>

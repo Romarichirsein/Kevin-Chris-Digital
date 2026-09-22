@@ -181,10 +181,6 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language, onOpenAudit 
         animate="visible"
         className="max-w-3xl"
       >
-        <motion.div variants={itemFadeInUp} className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 text-xs font-semibold mb-3 border border-blue-200 dark:border-blue-900/60 shadow-sm">
-          <PhoneCall className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-          <span>Canaux Officiels & Contact Direct</span>
-        </motion.div>
         <motion.h1 variants={itemFadeInUp} className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white font-['Outfit',sans-serif]">
           {t.contact.pageTitle}
         </motion.h1>

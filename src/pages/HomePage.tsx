@@ -94,17 +94,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, language, curren
           >
             {/* Left Content Column */}
             <div className="lg:col-span-7 text-center lg:text-left space-y-6">
-              
-              {/* Identity Eyebrow with blue pulse dot */}
-              <motion.div variants={itemFadeInUp}>
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-900 dark:text-blue-300 text-xs font-semibold shadow-sm">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600 dark:bg-blue-400"></span>
-                  </span>
-                  <span>{t.hero.badge}</span>
-                </div>
-              </motion.div>
 
               {/* Main H1 - Executive Blue */}
               <motion.h1 
@@ -290,9 +279,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, language, curren
 
               <div className="lg:col-span-7 space-y-6">
                 <div>
-                  <span className="inline-block px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-900/60 text-xs font-bold uppercase tracking-wider mb-2">
-                    L'Ouvrage de Référence
-                  </span>
                   <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight font-['Outfit',sans-serif]">
                     {t.homePreviews.guideTitle}
                   </h2>
@@ -373,11 +359,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, language, curren
         className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         <motion.div variants={itemFadeInUp} className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 text-xs font-semibold border border-blue-200 dark:border-blue-900/60">
-            <Cpu className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-            <span>La Méthode Kevin Chris</span>
-          </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-['Outfit',sans-serif] mt-3">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-['Outfit',sans-serif]">
             {t.homePreviews.methodSectionTitle}
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-400">

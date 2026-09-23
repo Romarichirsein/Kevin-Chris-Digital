@@ -5,6 +5,7 @@ import { PRODUCTS_CATALOG, FEATURED_PRODUCT } from '../data/products';
 import { translations } from '../i18n/translations';
 import { trackConversion } from '../services/tracker';
 import { getWhatsAppLink } from '../data/contact';
+import { getAssetUrl } from '../utils/assets';
 import { 
   ExternalLink, 
   CheckCircle, 
@@ -113,10 +114,16 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({ currency, language }
               <div className="lg:col-span-5 flex flex-col items-center">
                 <div className="relative w-full max-w-sm rounded-2xl overflow-hidden shadow-2xl border border-blue-500/30 group">
                   <img 
-                    src="/images/book_cover_preview.png" 
+                    src={getAssetUrl('images/guide_ia_book_cover_1790066130075.jpg')} 
                     alt="Guide Pratique Monétisation IA Afrique - Kevin Chris Atchof"
                     className="w-full h-auto object-cover group-hover:scale-103 transition-transform duration-500"
                     loading="eager"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      if (!target.src.includes('book_cover_preview')) {
+                        target.src = getAssetUrl('images/book_cover_preview.png');
+                      }
+                    }}
                   />
                   <div className="absolute top-3 left-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-black text-[10px] tracking-wider uppercase px-3 py-1 rounded-full shadow-lg">
                     BEST-SELLER 2026
@@ -236,10 +243,16 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({ currency, language }
           <div className="grid grid-cols-1 lg:grid-cols-12 items-center bg-slate-900 text-white">
             <div className="lg:col-span-5 h-72 lg:h-80 overflow-hidden relative">
               <img 
-                src="/img/kevin_laptop_coding.jpg" 
+                src={getAssetUrl('img/kevin_laptop_coding.jpg')} 
                 alt="Kevin Chris travail sur laptop et analyse de données"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  if (!target.src.includes('kevin_executive_portrait')) {
+                    target.src = getAssetUrl('img/kevin_executive_portrait.jpg');
+                  }
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-slate-900/90 hidden lg:block"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent lg:hidden"></div>

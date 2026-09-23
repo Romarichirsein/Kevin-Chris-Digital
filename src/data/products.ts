@@ -16,7 +16,7 @@ export const FEATURED_PRODUCT: Product = {
   category: 'reseaux-sociaux',
   badge: 'Best-Seller Officiel 🏆',
   chariowUrl: 'https://formation.kevinchrisdigital.com/monetisation',
-  coverImage: '/images/book_cover_preview.png',
+  coverImage: '/images/guide_ia_book_cover_1790066130075.jpg',
   bulletPoints: [
     "Algorithme Facebook : décryptage des signaux précoces, de l'engagement et du temps de rétention",
     "L'art du Hook percutant : captiver l'attention dès les premières secondes de chaque vidéo",

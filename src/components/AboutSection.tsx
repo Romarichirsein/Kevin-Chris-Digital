@@ -1,5 +1,6 @@
 import React from 'react';
 import { trackConversion } from '../services/tracker';
+import { getAssetUrl } from '../utils/assets';
 import { 
   Bot, 
   Layers, 
@@ -44,10 +45,16 @@ export const AboutSection: React.FC = () => {
               
               <div className="relative rounded-2xl overflow-hidden border border-slate-700 bg-slate-900 shadow-2xl">
                 <img
-                  src="/images/kevin_chris_portrait_1790066142907.jpg"
+                  src={getAssetUrl('images/kevin_chris_portrait_1790066142907.jpg')}
                   alt="Kevin Chris Atchof - Expert IA et Designer Senior à Douala"
                   className="w-full aspect-[4/4.2] object-cover object-center"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.src.includes('kevin_ai_portrait.jpg')) {
+                      target.src = getAssetUrl('img/kevin_ai_portrait.jpg');
+                    }
+                  }}
                 />
                 
                 {/* Overlay Badge at Bottom of photo */}

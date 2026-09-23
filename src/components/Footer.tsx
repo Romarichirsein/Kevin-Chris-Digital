@@ -3,6 +3,7 @@ import { Language, PageId } from '../types';
 import { translations } from '../i18n/translations';
 import { trackConversion } from '../services/tracker';
 import { OFFICIAL_CONTACT, getWhatsAppLink } from '../data/contact';
+import { getAssetUrl } from '../utils/assets';
 import { 
   FacebookIcon, 
   TikTokIcon, 
@@ -106,13 +107,13 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="flex items-center gap-3">
               <div className="relative w-11 h-11 rounded-full p-[2px] bg-gradient-to-tr from-cyan-400 via-blue-600 to-indigo-500 shadow-md shadow-blue-950/40 flex items-center justify-center">
                 <img 
-                  src="/img/logo_kevin.jpg" 
+                  src={getAssetUrl('img/logo_kevin.jpg')} 
                   alt="Kevin Chris" 
                   className="w-full h-full object-cover object-top rounded-full"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     if (!target.src.includes('kevin_ai_portrait.jpg')) {
-                      target.src = '/img/kevin_ai_portrait.jpg';
+                      target.src = getAssetUrl('img/kevin_ai_portrait.jpg');
                     }
                   }}
                 />

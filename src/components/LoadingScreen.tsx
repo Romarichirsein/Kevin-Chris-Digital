@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
+import { getAssetUrl } from '../utils/assets';
 
 interface LoadingScreenProps {
   onFinish: () => void;
@@ -100,13 +101,13 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({
           {/* Image au centre (Kevin Chris Portrait) */}
           <div className="relative w-36 h-36 sm:w-40 sm:h-40 rounded-full overflow-hidden p-1 bg-slate-900 border border-blue-500/30 shadow-xl shadow-blue-950/50">
             <img 
-              src="/img/logo_kevin.jpg"
+              src={getAssetUrl('img/logo_kevin.jpg')}
               alt="Kevin Chris"
               className="w-full h-full object-cover object-top rounded-full"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 if (!target.src.includes('kevin_ai_portrait.jpg')) {
-                  target.src = '/img/kevin_ai_portrait.jpg';
+                  target.src = getAssetUrl('img/kevin_ai_portrait.jpg');
                 }
               }}
             />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { PORTFOLIO_PROJECTS } from '../data/portfolio';
 import { trackConversion } from '../services/tracker';
+import { getAssetUrl } from '../utils/assets';
 import { 
   Palette, 
   Building2, 
@@ -105,10 +106,16 @@ export const CorporateSolutions: React.FC<CorporateSolutionsProps> = ({ onOpenAu
               <div>
                 <div className="relative aspect-video overflow-hidden bg-slate-950">
                   <img
-                    src={proj.image}
+                    src={getAssetUrl(proj.image)}
                     alt={proj.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (!target.src.includes('uiux_startupic_showcase.jpg')) {
+                        target.src = getAssetUrl('images/uiux_startupic_showcase.jpg');
+                      }
+                    }}
                   />
                   <div className="absolute top-3 left-3">
                     <span className="px-2.5 py-1 text-[10px] font-bold bg-[#0b0f19]/90 text-cyan-300 rounded-md border border-cyan-500/30 backdrop-blur-sm">

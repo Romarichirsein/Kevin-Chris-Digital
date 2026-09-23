@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Language, PageId } from '../types';
 import { translations } from '../i18n/translations';
 import { OFFICIAL_CONTACT, getWhatsAppLink } from '../data/contact';
+import { getAssetUrl } from '../utils/assets';
 import { 
   User, 
   Sparkles, 
@@ -84,10 +85,16 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, language }) =>
             <div className="blue-perimeter-inner bg-white dark:bg-slate-900 overflow-hidden">
               <div className="relative group">
                 <img 
-                  src="/img/kevin_executive_portrait.jpg" 
+                  src={getAssetUrl('img/kevin_executive_portrait.jpg')} 
                   alt="Kevin Chris Atchof - Formateur Digital & Fondateur FaceHOOK"
                   className="w-full h-[400px] object-cover object-top group-hover:scale-103 transition-transform duration-500"
                   loading="eager"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    if (!target.src.includes('kevin_ai_portrait')) {
+                      target.src = getAssetUrl('img/kevin_ai_portrait.jpg');
+                    }
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-3 left-4 right-4 text-white">
@@ -280,10 +287,16 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, language }) =>
           <motion.div variants={itemFadeInUp} className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 hover-blue-halo group shadow-xl">
             <div className="h-72 overflow-hidden">
               <img 
-                src="/img/kevin_radio_studio.jpg" 
+                src={getAssetUrl('img/kevin_radio_studio.jpg')} 
                 alt="Kevin Chris en studio radio et interview média"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  if (!target.src.includes('kevin_executive_portrait')) {
+                    target.src = getAssetUrl('img/kevin_executive_portrait.jpg');
+                  }
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
             </div>
@@ -305,10 +318,16 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, language }) =>
           <motion.div variants={itemFadeInUp} className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 hover-blue-halo group shadow-xl">
             <div className="h-72 overflow-hidden">
               <img 
-                src="/img/kevin_creative_mural.jpg" 
+                src={getAssetUrl('img/kevin_creative_mural.jpg')} 
                 alt="Kevin Chris créativité et branding digital"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  if (!target.src.includes('kevin_executive_portrait')) {
+                    target.src = getAssetUrl('img/kevin_executive_portrait.jpg');
+                  }
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
             </div>

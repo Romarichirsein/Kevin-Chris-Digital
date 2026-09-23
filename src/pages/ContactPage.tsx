@@ -4,6 +4,7 @@ import { Language } from '../types';
 import { translations } from '../i18n/translations';
 import { trackConversion } from '../services/tracker';
 import { OFFICIAL_CONTACT, getWhatsAppLink } from '../data/contact';
+import { getAssetUrl } from '../utils/assets';
 import { 
   FacebookIcon, 
   TikTokIcon, 
@@ -269,10 +270,16 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language, onOpenAudit 
             <div className="lg:col-span-4 flex justify-center">
               <div className="relative w-full max-w-xs rounded-3xl overflow-hidden shadow-2xl border border-blue-500/30 group hover-blue-halo">
                 <img 
-                  src="/img/kevin_facehook_tshirt.jpg" 
+                  src={getAssetUrl('img/kevin_facehook_tshirt.jpg')} 
                   alt="Kevin Chris Atchof en t-shirt FaceHOOK"
                   className="w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   loading="eager"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.src.includes('kevin_ai_portrait.jpg')) {
+                      target.src = getAssetUrl('img/kevin_ai_portrait.jpg');
+                    }
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
                 <div className="absolute bottom-3 left-4 right-4 text-white">

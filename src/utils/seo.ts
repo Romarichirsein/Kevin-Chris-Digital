@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { PageId, Language } from '../types';
+import { getAbsoluteAssetUrl } from './assets';
 
 export interface SeoMetadata {
   title: string;
@@ -233,9 +234,9 @@ export function updatePageMeta(pageId: PageId, language: Language = 'fr'): void 
   const currentUrl = `${origin}${window.location.pathname}${meta.canonicalPath === '/' ? '' : meta.canonicalPath}`;
   setMetaTag('property', 'og:url', currentUrl);
 
-  const defaultImage = `${origin}/img/kevin_ai_hologram.avif`;
+  const defaultImage = getAbsoluteAssetUrl('og-image.jpg');
   const pageImage = meta.ogImage 
-    ? (meta.ogImage.startsWith('http') ? meta.ogImage : `${origin}${meta.ogImage}`)
+    ? (meta.ogImage.startsWith('http') ? meta.ogImage : getAbsoluteAssetUrl(meta.ogImage))
     : defaultImage;
   setMetaTag('property', 'og:image', pageImage);
 

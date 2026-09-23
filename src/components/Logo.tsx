@@ -1,4 +1,5 @@
 import React from 'react';
+import { getAssetUrl } from '../utils/assets';
 
 interface LogoProps {
   className?: string;
@@ -23,13 +24,13 @@ export const Logo: React.FC<LogoProps> = ({ className = '', onClick }) => {
         <div className="relative w-11 h-11 rounded-full p-[2px] bg-gradient-to-tr from-blue-600 to-indigo-600 shadow-md shadow-blue-950/30 flex items-center justify-center transform group-hover:scale-105 transition-transform duration-300">
           <div className="w-full h-full rounded-full overflow-hidden bg-slate-900 flex items-center justify-center">
             <img 
-              src="/img/logo_kevin.jpg" 
+              src={getAssetUrl('img/logo_kevin.jpg')} 
               alt="Kevin Chris" 
               className="w-full h-full object-cover object-top"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 if (!target.src.includes('kevin_ai_portrait.jpg')) {
-                  target.src = '/img/kevin_ai_portrait.jpg';
+                  target.src = getAssetUrl('img/kevin_ai_portrait.jpg');
                 }
               }}
             />

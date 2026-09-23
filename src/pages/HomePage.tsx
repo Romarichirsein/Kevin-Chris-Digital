@@ -7,6 +7,7 @@ import { FEATURED_PRODUCT } from '../data/products';
 import { Testimonials } from '../components/Testimonials';
 import { FAQSection } from '../components/FaqSection';
 import { getWhatsAppLink } from '../data/contact';
+import { getAssetUrl } from '../utils/assets';
 import { 
   Sparkles, 
   Palette, 
@@ -148,10 +149,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, language, curren
                 <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-tr from-blue-600 via-sky-400 to-indigo-600 opacity-60 blur-xl"></div>
                 <div className="relative rounded-3xl overflow-hidden bg-slate-900 border border-blue-500/40 shadow-2xl hover-blue-halo transition-all group">
                   <img 
-                    src="/img/kevin_ai_hologram.avif" 
-                    alt="Kevin Chris - Formateur Digital & IA"
+                    src={getAssetUrl('img/kevin_ai_portrait.jpg')} 
+                    alt="Kevin Chris - Formateur Digital"
                     className="w-full h-[410px] object-cover object-top group-hover:scale-105 transition-transform duration-700"
                     loading="eager"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      if (!target.src.includes('kevin_ai_hologram')) {
+                        target.src = getAssetUrl('img/kevin_ai_hologram.jpg');
+                      }
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-85"></div>
                   
@@ -265,10 +272,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, language, curren
               <div className="lg:col-span-5 flex justify-center">
                 <div className="relative w-full max-w-sm rounded-2xl overflow-hidden shadow-2xl border border-blue-500/30 hover-glow-blue transition-transform group">
                   <img 
-                    src="/images/book_cover_preview.png" 
+                    src={getAssetUrl('images/guide_ia_book_cover_1790066130075.jpg')} 
                     alt="Visibilité & Monétisation - Kevin Chris Atchof"
                     className="w-full h-auto object-cover group-hover:scale-103 transition-transform duration-500"
                     loading="lazy"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      if (!target.src.includes('book_cover_preview')) {
+                        target.src = getAssetUrl('images/book_cover_preview.png');
+                      }
+                    }}
                   />
                   <div className="absolute top-3 left-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-black text-[10px] tracking-wider uppercase px-3 py-1 rounded-full shadow-lg">
                     {t.homePreviews.guideBadge}
@@ -413,10 +426,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, language, curren
         <motion.div variants={itemFadeInUp} className="relative rounded-3xl overflow-hidden border border-blue-500/30 shadow-2xl hover-blue-halo group">
           <div className="h-64 sm:h-80 relative overflow-hidden">
             <img 
-              src="/img/office_facehook.jpg" 
+              src={getAssetUrl('img/office_facehook.jpg')} 
               alt="Équipe FaceHOOK - Soyez vues pour vivre"
               className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
               loading="lazy"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                if (!target.src.includes('kevin_executive_portrait')) {
+                  target.src = getAssetUrl('img/kevin_executive_portrait.jpg');
+                }
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
           </div>

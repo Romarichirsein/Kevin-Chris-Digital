@@ -4,6 +4,7 @@ import { Language, PortfolioProject } from '../types';
 import { PORTFOLIO_PROJECTS } from '../data/portfolio';
 import { translations } from '../i18n/translations';
 import { trackConversion } from '../services/tracker';
+import { getAssetUrl } from '../utils/assets';
 import { 
   Briefcase, 
   ExternalLink, 
@@ -129,10 +130,16 @@ export const CorporatePage: React.FC<CorporatePageProps> = ({ language, onOpenAu
         <motion.div variants={itemFadeInUp} className="relative rounded-3xl overflow-hidden border border-blue-500/30 shadow-2xl hover-blue-halo group">
           <div className="h-80 sm:h-96 relative overflow-hidden">
             <img 
-              src="/img/office_facehook.jpg" 
+              src={getAssetUrl('img/office_facehook.jpg')} 
               alt="Espace de travail et équipe FaceHOOK"
               className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
               loading="eager"
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (!target.src.includes('kevin_ai_portrait.jpg')) {
+                  target.src = getAssetUrl('img/kevin_ai_portrait.jpg');
+                }
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
           </div>
@@ -278,10 +285,16 @@ export const CorporatePage: React.FC<CorporatePageProps> = ({ language, onOpenAu
               <div>
                 <div className="relative aspect-video overflow-hidden bg-slate-100 dark:bg-slate-800">
                   <img 
-                    src={proj.image} 
+                    src={getAssetUrl(proj.image)} 
                     alt={proj.title}
                     className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-500"
                     loading="lazy"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (!target.src.includes('uiux_startupic_showcase.jpg')) {
+                        target.src = getAssetUrl('images/uiux_startupic_showcase.jpg');
+                      }
+                    }}
                   />
                   <div className="absolute bottom-2 left-2 px-2.5 py-1 rounded-lg bg-black/75 backdrop-blur-sm text-white text-[10px] font-bold">
                     {proj.category}

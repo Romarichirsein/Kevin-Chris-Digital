@@ -5,6 +5,7 @@ import { COACHING_OFFERS } from '../data/coaching';
 import { translations } from '../i18n/translations';
 import { trackConversion } from '../services/tracker';
 import { OFFICIAL_CONTACT, getWhatsAppLink } from '../data/contact';
+import { getAssetUrl } from '../utils/assets';
 import { 
   Calendar, 
   Clock, 
@@ -140,10 +141,16 @@ export const CoachingPage: React.FC<CoachingPageProps> = ({ currency, language }
         <motion.div variants={itemFadeInUp} className="lg:col-span-4 flex justify-center">
           <div className="relative w-full max-w-xs rounded-3xl overflow-hidden shadow-2xl border border-blue-500/30 hover-blue-halo group">
             <img 
-              src="/img/kevin_success_mic.jpg" 
+              src={getAssetUrl('img/kevin_success_mic.jpg')} 
               alt="Kevin Chris coaching et mentorat"
               className="w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-700"
               loading="eager"
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (!target.src.includes('kevin_ai_portrait.jpg')) {
+                  target.src = getAssetUrl('img/kevin_ai_portrait.jpg');
+                }
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
             <div className="absolute bottom-3 left-4 right-4 text-white">

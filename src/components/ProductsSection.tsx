@@ -3,6 +3,7 @@ import { Currency, Product } from '../types';
 import { FEATURED_PRODUCT, PRODUCTS_CATALOG } from '../data/products';
 import { trackConversion } from '../services/tracker';
 import { getWhatsAppLink } from '../data/contact';
+import { getAssetUrl } from '../utils/assets';
 import { 
   Sparkles, 
   Check, 
@@ -91,10 +92,16 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ currency }) =>
                 <div className="absolute -inset-2 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl blur-xl opacity-30 group-hover:opacity-60 transition duration-500" />
                 <div className="relative rounded-2xl overflow-hidden border-2 border-emerald-500/40 shadow-2xl bg-slate-950">
                   <img
-                    src="/images/guide_ia_book_cover_1790066130075.jpg"
+                    src={getAssetUrl('images/guide_ia_book_cover_1790066130075.jpg')}
                     alt="Guide Pratique de la Monétisation de l'IA - Kevin Chris Atchof"
                     className="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-105"
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (!target.src.includes('book_cover_preview.png')) {
+                        target.src = getAssetUrl('images/book_cover_preview.png');
+                      }
+                    }}
                   />
                   <div className="absolute bottom-0 inset-x-0 bg-[#0b0f19]/90 backdrop-blur-sm p-3 border-t border-slate-800 text-center">
                     <span className="text-xs font-bold text-emerald-400">Format E-Book Numérique Téléchargeable</span>
